@@ -2,18 +2,19 @@ language: java
 
 jdk: openjdk11
 
-addons:
-  sonarcloud:
-  organization: "jeyoungryu"
-  token:
-    secure: "6A4jHW6trTUv2VpdsFJFd2cWXW/NPMs2MSK7HhaF29wxC9LHSJaS3vVTB1WH1MTshSlG+W/wdzWarbylAi6/nLEr6MN6+HHlEdiAZO+lXVMHl3X8LSg8YcYqmrADpkQPRNFIsxMdFSLtnjlLkyRZ8BRCtfy5jPUJYnrKAYRliCJNLpwhGlC9eGA1fNg/6VhCoC8lI13FQ/fdMFTybya+CEWBLPIMSY0tAvzxqTAr8J6fXmUL9xKhLw7KHO6VM6oX0b1MKEYo4bsRS2tgZm5vOFXiupbSxWPqxl7ptUNTWWuL88tiu/R0LXeqqgj6oGn7QVXaQwh9d70oH/qCWgQDyQKh130M3uijFrcd9uoKP5qID37AqsE2dn6MVSidlRcMzR/aWYHIt9NZOcS2pqHtM8H97ZS+MMrByJtfn/c1XvdOHgJMLUy3HWhYHpOf84prY17KXdPyfBNwwEa0ch6kmysmnTYmMukC6binhfqzirFNtBSwhNq5WlFBqQGRshVMMw7FwpH9+fRF1pM2mW7lN3sjvjliJh1Lb5CcdwIa+tt5bmTOk/oA+KPlAL9C0Y6UVBXXh0upCl+9itXcONU2I8Tm0uyVYH6pJGCmj0NerrYG8LyDybh6oa8WPYOYj+EoatF66VUTRqgXywgo7MR9LnU5OeXD2Vsx2kifTX0="
-    
 before_install:
   - chmod +x mvnw
 
+addons:
+  sonarcloud:
+    organization: jeyoungryu
+    token:
+      secure: 6A4jHW6trTUv2VpdsFJFd2cWXW/NPMs2MSK7HhaF29wxC9LHSJaS3vVTB1WH1MTshSlG+W/wdzWarbylAi6/nLEr6MN6+HHlEdiAZO+lXVMHl3X8LSg8YcYqmrADpkQPRNFIsxMdFSLtnjlLkyRZ8BRCtfy5jPUJYnrKAYRliCJNLpwhGlC9eGA1fNg/6VhCoC8lI13FQ/fdMFTybya+CEWBLPIMSY0tAvzxqTAr8J6fXmUL9xKhLw7KHO6VM6oX0b1MKEYo4bsRS2tgZm5vOFXiupbSxWPqxl7ptUNTWWuL88tiu/R0LXeqqgj6oGn7QVXaQwh9d70oH/qCWgQDyQKh130M3uijFrcd9uoKP5qID37AqsE2dn6MVSidlRcMzR/aWYHIt9NZOcS2pqHtM8H97ZS+MMrByJtfn/c1XvdOHgJMLUy3HWhYHpOf84prY17KXdPyfBNwwEa0ch6kmysmnTYmMukC6binhfqzirFNtBSwhNq5WlFBqQGRshVMMw7FwpH9+fRF1pM2mW7lN3sjvjliJh1Lb5CcdwIa+tt5bmTOk/oA+KPlAL9C0Y6UVBXXh0upCl+9itXcONU2I8Tm0uyVYH6pJGCmj0NerrYG8LyDybh6oa8WPYOYj+EoatF66VUTRqgXywgo7MR9LnU5OeXD2Vsx2kifTX0=
+
+
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - ./mvnw clean install sonar:sonar -Dsonar.projectKey=JeyoungRyu_OpenWIS_Training
+  - "./mvnw clean install sonar:sonar -Dsonar.projectKey=JeyoungRyu_OpenWIS_Training"
 
 notifications:
   email:
