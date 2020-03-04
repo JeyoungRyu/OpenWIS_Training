@@ -2,11 +2,21 @@ language: java
 
 jdk: openjdk11
 
+addons:
+  sonarcloud:
+  organization: "jeyoungryu"
+  token:
+    secure: "In18VKX/hjDxA2Rfw4CHZEFze8191YEk30GpJkFi66IkvqYfilRC8jTGMYE8ZOgoX7+Zs2G+V2zTfXE7m5dU3Iyw8ZDO2MaQB+hFkIlNUIAb9nLAxlWqWu3QJAt1J48/6BIb9crvP9z
+L6KYcJIR8caeRbrpPxYD2G0PLxk9W+pw/l59GZOfYapHZ745GyGmO9H8vqtWyN5OHIOTKZ7zw2vmX6NHjepuHgBRyEQ9rCjGdXihhtVcgZT+K2Lpz6Exvfs5HPiJ/stFkuA9n7xpPQUXqNmo1BWC
+t1+7gscTXchA5Cx6EHAKAZo4mqn1lh3Zd3TWhtfkIuTVIHtHdzGbR5XmMS+tGWB9uEx6nVGjHCcANGs9L96aVkcu2EIGu3Yo+q7uGHOu+TQd6BW9pwTKn0y688libiVI5rq6MLDAux5ZoCTA2Pjh
+4HVXqkHY9Q55gHYTtYP5ze2oG9ivQCHMMja0gcpRv3tuj95F7lIe+DKSA87YoW3M3ee39htiLsLw6JfppnOBcHYAxS5I3F2DMwyX3oZo8ZJ74qLsAPvPzdtKhYQSUBWkRNigc4U7iEoElPSifaDG
+sqq0XR0+/xiDbQx5riCfCOgEaP2H5q9M8WO8roU6polD+hQGk7xRSozp54vRJc9vDTDqjH5jcHHyoAYgB8C2Hxoef4to="
+
 before_install:
   - chmod +x mvnw
 
 script:
-  - ./mvnw clean install
+  - ./mvnw clean install sonar:sonar -Dsonar.projectKey=<key>
 
 notifications:
   email:
